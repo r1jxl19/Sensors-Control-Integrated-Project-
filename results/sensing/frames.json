@@ -1,0 +1,230 @@
+{
+  "n_markers": 199,
+  "reproj_calibrated_K": {
+    "median_px": 0.9241015276653239,
+    "p95_px": 1.8084336980113742,
+    "max_px": 2.4688908085592987
+  },
+  "reproj_true_K": {
+    "median_px": 0.5324672884399945,
+    "p95_px": 1.0136174666098787
+  },
+  "sensitivity": [
+    {
+      "range": 0.3,
+      "bearing_deg": 0.0,
+      "error": "camera x +5 mm",
+      "range_bias_mm": 5.000000000000004,
+      "bearing_bias_deg": 0.0,
+      "range_bias_sigma": 1.5311761650511158,
+      "bearing_bias_sigma": 0.0
+    },
+    {
+      "range": 0.3,
+      "bearing_deg": 0.0,
+      "error": "camera y +5 mm",
+      "range_bias_mm": 0.04166377354997142,
+      "bearing_bias_deg": 0.9548412538721889,
+      "range_bias_sigma": 0.012758915401160658,
+      "bearing_bias_sigma": 7.738688717429492
+    },
+    {
+      "range": 0.3,
+      "bearing_deg": 0.0,
+      "error": "camera yaw +1\u00b0",
+      "range_bias_mm": -0.008173804625477565,
+      "bearing_bias_deg": 0.7666715105443085,
+      "range_bias_sigma": -0.0025031069640631598,
+      "bearing_bias_sigma": 6.213631998579355
+    },
+    {
+      "range": 0.3,
+      "bearing_deg": 0.0,
+      "error": "camera pitch +1\u00b0",
+      "range_bias_mm": 0.48854207908849423,
+      "bearing_bias_deg": 0.0,
+      "range_bias_sigma": 0.14960879742496375,
+      "bearing_bias_sigma": 0.0
+    },
+    {
+      "range": 0.3,
+      "bearing_deg": 20.05352282957881,
+      "error": "camera x +5 mm",
+      "range_bias_mm": 4.70168712782365,
+      "bearing_bias_deg": -0.322392386940842,
+      "range_bias_sigma": 1.4398222531302411,
+      "bearing_bias_sigma": -2.6128891240158056
+    },
+    {
+      "range": 0.3,
+      "bearing_deg": 20.05352282957881,
+      "error": "camera y +5 mm",
+      "range_bias_mm": 1.7510454370727735,
+      "bearing_bias_deg": 0.8918654338843078,
+      "range_bias_sigma": 0.5362318074334683,
+      "bearing_bias_sigma": 7.228289459296557
+    },
+    {
+      "range": 0.3,
+      "bearing_deg": 20.05352282957881,
+      "error": "camera yaw +1\u00b0",
+      "range_bias_mm": -0.4267382676095277,
+      "bearing_bias_deg": 0.7812106079903006,
+      "range_bias_sigma": -0.13068229281578256,
+      "bearing_bias_sigma": 6.3314668207664235
+    },
+    {
+      "range": 0.3,
+      "bearing_deg": 20.05352282957881,
+      "error": "camera pitch +1\u00b0",
+      "range_bias_mm": 0.4615725312498986,
+      "bearing_bias_deg": -0.0321259515888294,
+      "range_bias_sigma": 0.14134977165843107,
+      "bearing_bias_sigma": -0.2603707559648846
+    },
+    {
+      "range": 1.0,
+      "bearing_deg": 0.0,
+      "error": "camera x +5 mm",
+      "range_bias_mm": 4.999999999999893,
+      "bearing_bias_deg": 0.0,
+      "range_bias_sigma": 0.8404072447370539,
+      "bearing_bias_sigma": 0.0
+    },
+    {
+      "range": 1.0,
+      "bearing_deg": 0.0,
+      "error": "camera y +5 mm",
+      "range_bias_mm": 0.012499921876019116,
+      "bearing_bias_deg": 0.2864765102770745,
+      "range_bias_sigma": 0.0021010049806507746,
+      "bearing_bias_sigma": 2.3218022146606185
+    },
+    {
+      "range": 1.0,
+      "bearing_deg": 0.0,
+      "error": "camera yaw +1\u00b0",
+      "range_bias_mm": -0.009915094473567088,
+      "bearing_bias_deg": 0.9300028423756713,
+      "range_bias_sigma": -0.0016665434455676567,
+      "bearing_bias_sigma": 7.537381186960452
+    },
+    {
+      "range": 1.0,
+      "bearing_deg": 0.0,
+      "error": "camera pitch +1\u00b0",
+      "range_bias_mm": 0.3819286885622386,
+      "bearing_bias_deg": 0.0,
+      "range_bias_sigma": 0.06419512736812683,
+      "bearing_bias_sigma": 0.0
+    },
+    {
+      "range": 1.0,
+      "bearing_deg": 20.05352282957881,
+      "error": "camera x +5 mm",
+      "range_bias_mm": 4.698326428622002,
+      "bearing_bias_deg": -0.09777366095867142,
+      "range_bias_sigma": 0.7897015137507166,
+      "bearing_bias_sigma": -0.7924248390548986
+    },
+    {
+      "range": 1.0,
+      "bearing_deg": 20.05352282957881,
+      "error": "camera y +5 mm",
+      "range_bias_mm": 1.7255003615284092,
+      "bearing_bias_deg": 0.26864789319978205,
+      "range_bias_sigma": 0.29002460092498233,
+      "bearing_bias_sigma": 2.1773068681683085
+    },
+    {
+      "range": 1.0,
+      "bearing_deg": 20.05352282957881,
+      "error": "camera yaw +1\u00b0",
+      "range_bias_mm": -0.42826781706795103,
+      "bearing_bias_deg": 0.9344286110689236,
+      "range_bias_sigma": -0.0719838752303274,
+      "bearing_bias_sigma": 7.573250653338796
+    },
+    {
+      "range": 1.0,
+      "bearing_deg": 20.05352282957881,
+      "error": "camera pitch +1\u00b0",
+      "range_bias_mm": 0.3674563877047454,
+      "bearing_bias_deg": -0.0076821895741219105,
+      "range_bias_sigma": 0.061762602070396466,
+      "bearing_bias_sigma": -0.06226173569828754
+    },
+    {
+      "range": 2.5,
+      "bearing_deg": 0.0,
+      "error": "camera x +5 mm",
+      "range_bias_mm": 4.999999999999893,
+      "bearing_bias_deg": 0.0,
+      "range_bias_sigma": 0.23327094908377652,
+      "bearing_bias_sigma": 0.0
+    },
+    {
+      "range": 2.5,
+      "bearing_deg": 0.0,
+      "error": "camera y +5 mm",
+      "range_bias_mm": 0.004999994999810298,
+      "bearing_bias_deg": 0.11459140623778596,
+      "range_bias_sigma": 0.000233270715803982,
+      "bearing_bias_sigma": 0.9287273868515064
+    },
+    {
+      "range": 2.5,
+      "bearing_deg": 0.0,
+      "error": "camera yaw +1\u00b0",
+      "range_bias_mm": -0.010362843036570979,
+      "bearing_bias_deg": 0.9720013043535393,
+      "range_bias_sigma": -0.00048347004606943365,
+      "bearing_bias_sigma": 7.877765541469105
+    },
+    {
+      "range": 2.5,
+      "bearing_deg": 0.0,
+      "error": "camera pitch +1\u00b0",
+      "range_bias_mm": 0.15347142314947604,
+      "bearing_bias_deg": 0.0,
+      "range_bias_sigma": 0.007160084907063382,
+      "bearing_bias_sigma": 0.0
+    },
+    {
+      "range": 2.5,
+      "bearing_deg": 20.05352282957881,
+      "error": "camera x +5 mm",
+      "range_bias_mm": 4.697450356267119,
+      "bearing_bias_deg": -0.0392195047408582,
+      "range_bias_sigma": 0.21915574057607573,
+      "bearing_bias_sigma": -0.31786177818609224
+    },
+    {
+      "range": 2.5,
+      "bearing_deg": 20.05352282957881,
+      "error": "camera y +5 mm",
+      "range_bias_mm": 1.7188981151314842,
+      "bearing_bias_deg": 0.10757028596521373,
+      "range_bias_sigma": 0.08019379893900891,
+      "bearing_bias_sigma": 0.8718234103876414
+    },
+    {
+      "range": 2.5,
+      "bearing_deg": 20.05352282957881,
+      "error": "camera yaw +1\u00b0",
+      "range_bias_mm": -0.42866063663415943,
+      "bearing_bias_deg": 0.973778185977769,
+      "range_bias_sigma": -0.019998814708501678,
+      "bearing_bias_sigma": 7.892166609418224
+    },
+    {
+      "range": 2.5,
+      "bearing_deg": 20.05352282957881,
+      "error": "camera pitch +1\u00b0",
+      "range_bias_mm": 0.16585261873469648,
+      "bearing_bias_deg": -0.0013873977781967742,
+      "range_bias_sigma": 0.007737719556054643,
+      "bearing_bias_sigma": -0.01124442360358603
+    }
+  ]
+}

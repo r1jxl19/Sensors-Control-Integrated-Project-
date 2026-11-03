@@ -1,0 +1,142 @@
+{
+  "LQR": {
+    "small_max_heading_deg": 15.629257610885585,
+    "small_overshoot_mm": 0.008720330765710216,
+    "large_max_heading_deg": 55.68374182916455,
+    "large_overshoot_mm": 0.008639140161914582,
+    "mismatch_cruise_offset_mm": 12.06276353220406,
+    "mismatch_rms_mm": 11.334701625635827
+  },
+  "LQI z_max=0.03": {
+    "small_max_heading_deg": 44.87433898875263,
+    "small_overshoot_mm": 0.18369330421363905,
+    "large_max_heading_deg": 116.67052732655804,
+    "large_overshoot_mm": 0.007661526389979301,
+    "mismatch_cruise_offset_mm": 0.00042772721487079524,
+    "mismatch_rms_mm": 0.7631608490177549,
+    "K": [
+      [
+        1.9,
+        -0.0,
+        -0.0,
+        -0.0
+      ],
+      [
+        -0.0,
+        48.38,
+        6.85,
+        27.25
+      ]
+    ]
+  },
+  "LQI z_max=0.05": {
+    "small_max_heading_deg": 39.37716138210145,
+    "small_overshoot_mm": 0.9970467940232375,
+    "large_max_heading_deg": 101.56591637402448,
+    "large_overshoot_mm": 0.0399929634387064,
+    "mismatch_cruise_offset_mm": 0.0030042558171313365,
+    "mismatch_rms_mm": 1.092632182014326,
+    "K": [
+      [
+        1.9,
+        0.0,
+        -0.0,
+        0.0
+      ],
+      [
+        -0.0,
+        38.5,
+        6.62,
+        16.46
+      ]
+    ]
+  },
+  "LQI z_max=0.1": {
+    "small_max_heading_deg": 32.63417480552732,
+    "small_overshoot_mm": 3.822544150211993,
+    "large_max_heading_deg": 85.06578708497999,
+    "large_overshoot_mm": 0.18189826066139503,
+    "mismatch_cruise_offset_mm": 0.012510906703675866,
+    "mismatch_rms_mm": 1.7465167496096397,
+    "K": [
+      [
+        1.9,
+        0.0,
+        -0.0,
+        0.0
+      ],
+      [
+        -0.0,
+        29.4,
+        6.4,
+        8.28
+      ]
+    ]
+  },
+  "LQI z_max=0.2": {
+    "small_max_heading_deg": 27.045382301787114,
+    "small_overshoot_mm": 3.928254828486466,
+    "large_max_heading_deg": 73.21536720375279,
+    "large_overshoot_mm": 0.3629959690414353,
+    "mismatch_cruise_offset_mm": 0.5686943258596274,
+    "mismatch_rms_mm": 2.7192344538685056,
+    "K": [
+      [
+        1.9,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        23.8,
+        6.27,
+        4.16
+      ]
+    ]
+  },
+  "LQI z_max=0.4": {
+    "small_max_heading_deg": 22.724906342210353,
+    "small_overshoot_mm": 2.8983611348756266,
+    "large_max_heading_deg": 65.49894265849699,
+    "large_overshoot_mm": 0.46887001773199266,
+    "mismatch_cruise_offset_mm": 2.6173960519293993,
+    "mismatch_rms_mm": 4.110083084236749,
+    "K": [
+      [
+        1.9,
+        -0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        20.53,
+        6.19,
+        2.08
+      ]
+    ]
+  },
+  "LQI z_max=0.8": {
+    "small_max_heading_deg": 19.582762547781776,
+    "small_overshoot_mm": 1.9667374724576803,
+    "large_max_heading_deg": 60.93363742392924,
+    "large_overshoot_mm": 0.5339625015856608,
+    "mismatch_cruise_offset_mm": 5.7347111129836,
+    "mismatch_rms_mm": 6.426383834030388,
+    "K": [
+      [
+        1.9,
+        -0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        18.71,
+        6.14,
+        1.04
+      ]
+    ]
+  }
+}
