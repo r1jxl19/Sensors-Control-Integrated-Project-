@@ -681,15 +681,13 @@ docs/               development log (what failed, how it was diagnosed, what cha
 
 | Member | Student ID | Contribution |
 |---|---|---|
-| Phoenix Radus | | Control (Part D): `tb3control/` package (gain-scheduled LQR tracker, reference generation, saturation, docking), controller analysis and evaluation (`control_scripts/`, `tests/`), Kanayama comparison, LQI extension, docking guard |
+| Phoenix Radus | 25485451 | Control (Part D): `tb3control/` package (gain-scheduled LQR tracker, reference generation, saturation, docking), controller analysis and evaluation (`control_scripts/`, `tests/`), Kanayama comparison, LQI extension, docking guard |
 | | | |
 | | | |
 | | | |
 
 ## 12. Generative AI declaration
 
-> **Team: check this against the subject's GenAI policy and complete the last
-> column honestly before submission.**
 
 | Tool | Used for | Team verification / changes |
 |---|---|---|
