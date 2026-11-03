@@ -693,4 +693,4 @@ docs/               development log (what failed, how it was diagnosed, what cha
 
 | Tool | Used for | Team verification / changes |
 |---|---|---|
-| Claude (Anthropic) | Generating the simulation, pipeline and control code, calibration and evaluation scripts, figures, and first drafts of this page and the development log | *Team to complete: what each member ran, checked, changed or wrote themselves* |
+| Claude (Anthropic) | Assisting with code when errors came up and assisting with Git hub and understanding how it works| *Team to complete: what each member ran, checked, changed or wrote themselves* |
