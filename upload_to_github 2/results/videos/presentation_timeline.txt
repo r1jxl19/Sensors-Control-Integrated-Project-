@@ -1,0 +1,20 @@
+0:00.00  (  8.0 s)  Title
+0:08.00  ( 16.0 s)  Overview: the task and headline results
+0:24.00  ( 20.0 s)  Part A · Model: State-space model, controllability and observability
+0:44.00  ( 10.0 s)  Part B · Sensing: Coordinate frames
+0:54.00  ( 15.0 s)  Part B · Sensing: Calibration: camera and wheel odometry
+1:09.00  ( 15.0 s)  Part B · Sensing: ArUco measurement noise, measured not guessed
+1:24.00  ( 15.0 s)  Part B · Sensing: 2D LiDAR: noise, mounting offset and map accuracy
+1:39.00  ( 18.0 s)  Part C · Estimation: EKF: wheel odometry fused with camera range and bearing
+1:57.00  ( 20.0 s)  Part D · Control: Gain-scheduled LQR on the estimated state
+2:17.00  ( 15.0 s)  Part D · Control: LQR vs LQI vs Kanayama
+2:32.00  (  3.0 s)  Demo 1: Nominal mission
+2:35.00  ( 26.4 s)  clip nominal.mp4
+3:01.45  (  3.0 s)  Demo 2: Disturbed mission
+3:04.45  ( 36.0 s)  clip disturbed.mp4
+3:40.40  (  3.0 s)  Demo 3: Low tyre friction, gyro-aided EKF
+3:43.40  ( 26.6 s)  clip slip_gyro.mp4
+4:10.05  ( 20.0 s)  Evaluation: Monte Carlo evaluation across seven conditions
+4:30.05  ( 15.0 s)  Diagnosis: The one failure: traced and fixed
+4:45.05  (  6.0 s)  End card
+4:51.05  end
