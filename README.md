@@ -682,7 +682,7 @@ docs/               development log (what failed, how it was diagnosed, what cha
 |---|---|---|
 | Phoenix Radus | 25485451 | Control (Part D): `tb3control/` package (gain-scheduled LQR tracker, reference generation, saturation, docking), controller analysis and evaluation (`control_scripts/`, `tests/`), Kanayama comparison, LQI extension, docking guard |
 | Rijul Banerjee | 24964177 | Estimation (Part C): responsible for the estimation section. Set up the pipeline from a fresh install and reproduced the EKF results against §5 (nominal seeds 101–104: all docked, estimate RMSE 10.5–18.2 mm, mean NEES 4.1–13.5); reviewed the estimator design (`tb3dock/ekf.py`, `tb3dock/localisation.py`, `tb3sensing/measurement.py`); added `requirements.txt` |
-| Issa Gamildien | 25856410 | Modelling (Part A): responsible for the modelling section (§3). Reviewed the platform model (`tb3dock/model.py`): wheel kinematics, unicycle pose model, actuator lag model and the LQR tracking-error model. Re-ran the controllability and observability analysis (`scripts/analyse_model.py`, `results/model_analysis.json`) |
+| Issa Gamildien | 25856410 | Modelling (Part A): responsible for the modelling section. Reviewed the platform model (`tb3dock/model.py`): wheel kinematics, unicycle pose model, actuator lag model and the LQR tracking-error model. Re-ran the controllability and observability analysis (`scripts/analyse_model.py`, `results/model_analysis.json`) |
 
 ## 12. Generative AI declaration
 | Tool | Used for | Team verification / changes |
