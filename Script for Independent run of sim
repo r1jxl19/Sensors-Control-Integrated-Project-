@@ -1,0 +1,141 @@
+"""Run the pipeline one project part at a time (A-E) instead of all at once.
+
+  python scripts/run_part.py --list              # show what each part runs
+  python scripts/run_part.py C                   # quick demo of Part C (estimation), a few minutes
+  python scripts/run_part.py A B                 # several parts, in order
+  python scripts/run_part.py C --full            # Part C Monte Carlo tables + figures (slow)
+  python scripts/run_part.py B --recalibrate     # re-run the Part B calibrations (overwrites config)
+  python scripts/run_part.py all --dry-run       # print the commands without running them
+
+Modes
+  quick (default)  Single missions and plots. Plots go to results/parts/ so the
+                   committed figures on the project page are not overwritten.
+                   (Part A rewrites results/model_analysis.* and Part B rewrites
+                   results/sensing/*; both are deterministic analyses.)
+  --full           Runs the Monte Carlo experiments behind that part's tables
+                   (scripts/evaluate.py) and regenerates the figures
+                   (scripts/make_report.py). This OVERWRITES results/eval/*.csv
+                   and the figures in results/. Use --n 12 to match the project page.
+  --recalibrate    Re-runs the calibration scripts. This OVERWRITES
+                   config/calibration.json, which every result depends on.
+
+This only calls the existing scripts; it does not change any pipeline code.
+Set MUJOCO_GL first (glfw on macOS/Windows, osmesa on headless Linux).
+"""
+import argparse
+import os
+import subprocess
+import sys
+import time
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PARTS_OUT = os.path.join("results", "parts")
+
+
+def py(*args):
+    return [sys.executable, *args]
+
+
+def evaluate(exps, n):
+    return [py("scripts/evaluate.py", "--exp", ",".join(exps), "--n", str(n)), py("scripts/make_report.py")]
+
+
+PARTS = {
+    "A": dict(
+        title="Modelling, controllability and observability",
+        quick=lambda n: [py("scripts/analyse_model.py")],
+        full=lambda n: [],
+        recal=lambda: [py("scripts/identify_actuator.py")],
+    ),
+    "B": dict(
+        title="Sensing, calibration and frames",
+        quick=lambda n: [py("scripts/sensing_frames.py"), py("scripts/sensing_lidar.py")],
+        full=lambda n: [],
+        recal=lambda: [py("scripts/calibrate_camera.py"), py("scripts/calibrate_odometry.py"),
+                       py("scripts/characterise_markers.py")],
+    ),
+    "C": dict(
+        title="Estimation (EKF)",
+        quick=lambda n: [
+            py("scripts/run_mission.py", "--seed", "101"),
+            py("scripts/run_mission.py", "--seed", "101", "--gyro"),
+            py("scripts/run_mission.py", "--seed", "101", "--no-camera"),
+            py("scripts/plot_trial.py", "--seed", "101", "--out", os.path.join(PARTS_OUT, "C_trial_101.png")),
+        ],
+        full=lambda n: evaluate(["nominal", "sweep_alpha", "sweep_beta", "gyro",
+                                 "baseline_odometry", "uncalibrated"], n),
+        recal=lambda: [],
+    ),
+    "D": dict(
+        title="Control (LQR)",
+        quick=lambda n: [py("-m", "pytest", "-q", "tests"), py("scripts/run_mission.py", "--seed", "102")],
+        full=lambda n: evaluate(["sweep_lqr", "control_lqi", "dock_guard"], n),
+        recal=lambda: [],
+    ),
+    "E": dict(
+        title="Integration and robustness",
+        quick=lambda n: [
+            py("scripts/run_mission.py", "--seed", "101", "--dist", "push"),
+            py("scripts/run_mission.py", "--seed", "104", "--dist", "combined"),
+            py("scripts/plot_trial.py", "--seed", "106", "--dist", "combined",
+               "--out", os.path.join(PARTS_OUT, "E_trial_106_combined.png")),
+        ],
+        full=lambda n: evaluate(["robustness", "v2_livelock_fix"], n),
+        recal=lambda: [],
+    ),
+}
+
+
+def main():
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("parts", nargs="*", help="A B C D E, or all")
+    ap.add_argument("--full", action="store_true", help="run the Monte Carlo experiments (slow, overwrites results)")
+    ap.add_argument("--recalibrate", action="store_true", help="re-run calibrations (overwrites config/calibration.json)")
+    ap.add_argument("--n", type=int, default=12, help="seeds per condition for --full (project page uses 12)")
+    ap.add_argument("--dry-run", action="store_true", help="print the commands only")
+    ap.add_argument("--list", action="store_true", help="list what each part runs")
+    a = ap.parse_args()
+
+    if a.list or not a.parts:
+        for key, p in PARTS.items():
+            print(f"\nPart {key}: {p['title']}")
+            for label, cmds in (("quick", p["quick"](a.n)), ("--full", p["full"](a.n)), ("--recalibrate", p["recal"]())):
+                for c in cmds:
+                    print(f"  [{label}] " + " ".join(c[1:]))
+        return
+
+    parts = list(PARTS) if [s.lower() for s in a.parts] == ["all"] else [s.upper() for s in a.parts]
+    bad = [p for p in parts if p not in PARTS]
+    if bad:
+        ap.error(f"unknown part(s) {bad}; choose from A B C D E or all")
+    if a.recalibrate and not a.dry_run:
+        print("WARNING: --recalibrate overwrites config/calibration.json; every result depends on it.")
+    if a.full and not a.dry_run:
+        print("WARNING: --full overwrites results/eval/*.csv and the figures in results/.")
+    os.makedirs(os.path.join(ROOT, PARTS_OUT), exist_ok=True)
+
+    summary = []
+    for key in parts:
+        p = PARTS[key]
+        cmds = (p["recal"]() if a.recalibrate else []) + p["quick"](a.n) + (p["full"](a.n) if a.full else [])
+        print(f"\n===== Part {key}: {p['title']} =====")
+        for c in cmds:
+            shown = " ".join(c[1:])
+            print(f"\n$ python {shown}", flush=True)
+            if a.dry_run:
+                continue
+            t0 = time.time()
+            rc = subprocess.call(c, cwd=ROOT)
+            summary.append((key, shown, rc, time.time() - t0))
+            if rc != 0:
+                print(f"!! exited with code {rc}; carrying on with the next command")
+
+    if summary:
+        print("\n===== Summary =====")
+        for key, shown, rc, dt in summary:
+            print(f"Part {key}  {'ok  ' if rc == 0 else 'FAIL'}  {dt:6.1f} s  {shown}")
+        sys.exit(1 if any(rc for _, _, rc, _ in summary) else 0)
+
+
+if __name__ == "__main__":
+    main()
