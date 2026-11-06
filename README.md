@@ -682,13 +682,10 @@ docs/               development log (what failed, how it was diagnosed, what cha
 | Member | Student ID | Contribution |
 |---|---|---|
 | Phoenix Radus | 25485451 | Control (Part D): `tb3control/` package (gain-scheduled LQR tracker, reference generation, saturation, docking), controller analysis and evaluation (`control_scripts/`, `tests/`), Kanayama comparison, LQI extension, docking guard |
-| | | |
-| | | |
+| Rijul Banerjee | YOUR-ID | Estimation (Part C): responsible for the estimation section. Set up the pipeline from a fresh install and reproduced the EKF results against §5 (nominal seeds 101–104: all docked, estimate RMSE 10.5–18.2 mm, mean NEES 4.1–13.5); reviewed the estimator design (`tb3dock/ekf.py`, `tb3dock/localisation.py`, `tb3sensing/measurement.py`); added `requirements.txt` |
 | | | |
 
 ## 12. Generative AI declaration
-
-
 | Tool | Used for | Team verification / changes |
 |---|---|---|
-| Claude (Anthropic) | Assisting with code when errors came up and assisting with Git hub and understanding how it works| *Team to complete: what each member ran, checked, changed or wrote themselves* |
+| Claude (Anthropic) | Generating the simulation, sensing, estimation and control code; calibration, evaluation and analysis scripts; figures; and first drafts of this project page and the development log. Also used for debugging errors, help with GitHub, and explaining how the code and methods work. | **Rijul:** set up the pipeline from a fresh install and identified and added the missing dependencies (`requirements.txt`); re-ran the nominal mission on seeds 101–104 and confirmed the estimation results match §5; reviewed the estimator code (`tb3dock/ekf.py`, `tb3dock/localisation.py`, `tb3sensing/measurement.py`) so it can be explained. |
