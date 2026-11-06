@@ -680,9 +680,9 @@ docs/               development log (what failed, how it was diagnosed, what cha
 
 | Member | Student ID | Contribution |
 |---|---|---|
-| Phoenix Radus | 25485451 | Control (Part D): `tb3control/` package (gain-scheduled LQR tracker, reference generation, saturation, docking), controller analysis and evaluation (`control_scripts/`, `tests/`), Kanayama comparison, LQI extension, docking guard |
+| Phoenix Radus | 25485451 | Control (Part D): `tb3control/` package (gain-scheduled LQR tracker, reference generation, saturation, docking), controller analysis and evaluation (`control_scripts/`, `tests/`), Kanayama comparison, LQI extension, docking guard. Sensing (Part B): camera intrinsic calibration (`scripts/calibrate_camera.py`), odometry calibration (`scripts/calibrate_odometry.py`), marker range and bearing characterisation with the range-bias model and measurement noise R (`scripts/characterise_markers.py`), ArUco detection and frame handling (`tb3dock/vision.py`) |
 | Rijul Banerjee | 24964177 | Estimation (Part C): responsible for the estimation section. Set up the pipeline from a fresh install and reproduced the EKF results against §5 (nominal seeds 101–104: all docked, estimate RMSE 10.5–18.2 mm, mean NEES 4.1–13.5); reviewed the estimator design (`tb3dock/ekf.py`, `tb3dock/localisation.py`, `tb3sensing/measurement.py`); added `requirements.txt` |
-| Issa Gamildien | 25856410 | Modelling (Part A): responsible for the modelling section. Reviewed the platform model (`tb3dock/model.py`): wheel kinematics, unicycle pose model, actuator lag model and the LQR tracking-error model. Re-ran the controllability and observability analysis (`scripts/analyse_model.py`, `results/model_analysis.json`) |
+| Issa Gamildien | 25856410 | Modelling (Part A): `tb3dock/model.py` (wheel kinematics, unicycle model, actuator model, LQR tracking-error model), controllability and observability analysis (`scripts/analyse_model.py`, `results/model_analysis.json`), actuator identification (`scripts/identify_actuator.py`) |
 
 ## 12. Generative AI declaration
 | Tool | Used for | Team verification / changes |
