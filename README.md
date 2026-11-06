@@ -1,4 +1,4 @@
-# TurtleBot3 visual waypoint navigation and ArUco docking (41014 Integrated Project, Track A)
+# TurtleBot3 visual waypoint navigation and ArUco docking (41014 Integrated Project, Track A) (Group 30) 
 
 A simulated TurtleBot3 Burger in MuJoCo works through the room in five steps:
 
