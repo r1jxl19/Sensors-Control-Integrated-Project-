@@ -676,8 +676,7 @@ docs/               development log (what failed, how it was diagnosed, what cha
 
 ## 11. Contribution statement
 
-> **Team: complete the rows for each member before submission.** Each member
-> must be able to explain the whole pipeline at the viva.
+
 
 | Member | Student ID | Contribution |
 |---|---|---|
