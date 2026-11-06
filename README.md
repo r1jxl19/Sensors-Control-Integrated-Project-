@@ -27,7 +27,7 @@ and success means docking within 30 mm / 20 mm / 3°.
 In the nominal trials the median final lateral docking error is 1.0 mm (95th
 percentile 3.4 mm).
 
-> Demo video: `<link to the 5-minute video>`  ·  Project page: this README
+> Demo video: `(https://www.youtube.com/watch?v=CufH2ze2jqg)`  ·  Project page: this README
 
 ---
 
@@ -682,9 +682,9 @@ docs/               development log (what failed, how it was diagnosed, what cha
 |---|---|---|
 | Phoenix Radus | 25485451 | Control (Part D): `tb3control/` package (gain-scheduled LQR tracker, reference generation, saturation, docking), controller analysis and evaluation (`control_scripts/`, `tests/`), Kanayama comparison, LQI extension, docking guard |
 | Rijul Banerjee | 24964177 | Estimation (Part C): responsible for the estimation section. Set up the pipeline from a fresh install and reproduced the EKF results against §5 (nominal seeds 101–104: all docked, estimate RMSE 10.5–18.2 mm, mean NEES 4.1–13.5); reviewed the estimator design (`tb3dock/ekf.py`, `tb3dock/localisation.py`, `tb3sensing/measurement.py`); added `requirements.txt` |
-| | | |
+| Issa Gamildien | 25856410 | Modelling (Part A): responsible for the modelling section (§3). Reviewed the platform model (`tb3dock/model.py`): wheel kinematics, unicycle pose model, actuator lag model and the LQR tracking-error model. Re-ran the controllability and observability analysis (`scripts/analyse_model.py`, `results/model_analysis.json`) |
 
 ## 12. Generative AI declaration
 | Tool | Used for | Team verification / changes |
 |---|---|---|
-| Claude (Anthropic) | Generating the simulation, sensing, estimation and control code; calibration, evaluation and analysis scripts; figures; and first drafts of this project page and the development log. Also used for debugging errors, help with GitHub, and explaining how the code and methods work. | **Rijul:** set up the pipeline from a fresh install and identified and added the missing dependencies (`requirements.txt`); re-ran the nominal mission on seeds 101–104 and confirmed the estimation results match §5; reviewed the estimator code (`tb3dock/ekf.py`, `tb3dock/localisation.py`, `tb3sensing/measurement.py`) so it can be explained. |
+| Claude (Anthropic) | Generating a template where the code could be added and iterated upon with assistance; calibration, evaluation and analysis scripts; figures; and first drafts of this project page and the development log. Also used for debugging errors, help with GitHub, and explaining how the code and methods work. | **Rijul:** set up the pipeline from a fresh install and identified and added the missing dependencies (`requirements.txt`); re-ran the nominal mission on seeds 101–104 and confirmed the estimation results match §5; reviewed the estimator code (`tb3dock/ekf.py`, `tb3dock/localisation.py`, `tb3sensing/measurement.py`) so it can be explained. |
